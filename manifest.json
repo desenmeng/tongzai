@@ -1,0 +1,30 @@
+{
+    "name": "与我同在",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "让搜索不再孤胆，同搜同乐，与我同在",
+    "icons": { "128": "img/logo.png" },
+    "background":{
+        "scripts":["background/sendMessage.js"]
+    },
+    "browser_action": {
+        "default_title": "与我同在",
+        "default_icon": "img/log.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://www.baidu.com/s?*"],
+            "css": ["mystyles.css"],
+            "js": [
+                "lib/jquery-1.9.1.min.js","lib/jquery.query.js",
+                "lib/firebase.js","lib/firebase-auth-client.js"
+                "lib/baiduTemplate.js","tongzai.js"
+            ]
+        }
+    ],
+    "content_security_policy": "script-src 'self' https://*.firebaseio.com https://*.firebase.com; object-src 'self'",
+    "permissions": [
+        "notifications", "http://*/*", "https://*/*"],
+    "web_accessible_resources": [""]
+
+}

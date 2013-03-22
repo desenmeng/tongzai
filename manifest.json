@@ -5,18 +5,19 @@
     "description": "让搜索不再孤胆，同搜同乐，与我同在",
     "icons": { "128": "img/logo.png" },
     "background":{
-        "scripts":["js/background/sendMessage.js"]
+        "scripts":["background.js"]
     },
     "browser_action": {
         "default_title": "与我同在",
-        "default_icon": "img/logo.png"
+        "default_icon": "img/logo.png",
+        "default_popup":"popup.html"
     },
     "content_scripts": [
         {
             "matches": ["http://www.baidu.com/s?*"],
             "js": [
                 "js/lib/jquery-1.9.1.min.js","js/lib/jquery.query.js",
-                "js/lib/firebase.js","js/lib/firebase-auth-client.js",
+                "js/lib/firebase.js", "js/lib/firebase-auth-client.js",
                 "js/lib/class.js","js/lib/baiduTemplate.js","js/tongzai.js"
             ]
         }

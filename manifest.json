@@ -3,22 +3,24 @@
     "version": "1.0.0",
     "manifest_version": 2,
     "description": "让搜索不再孤胆，同搜同乐，与我同在",
-    "icons": { "128": "img/logo.png" },
+    "icons": { "128": "images/logo.png" },
     "background":{
-        "scripts":["background.js"]
+        "scripts":["js/background/sendMessage.js"]
     },
     "browser_action": {
         "default_title": "与我同在",
-        "default_icon": "img/logo.png",
-        "default_popup":"popup.html"
+        "default_icon": "images/logo.png"
     },
     "content_scripts": [
         {
             "matches": ["http://www.baidu.com/s?*"],
+            "css":["css/jquery-ui-1.10.2.custom.css","css/myStyle.css","css/stylechat.css"],
             "js": [
                 "js/lib/jquery-1.9.1.min.js","js/lib/jquery.query.js",
+                "js/lib/jquery-ui-1.10.2.min.js",
                 "js/lib/firebase.js", "js/lib/firebase-auth-client.js",
-                "js/lib/class.js","js/lib/baiduTemplate.js","js/tongzai.js"
+                "js/lib/class.js","js/lib/baiduTemplate.js","js/tongzai.js",
+                "js/lib/jquery.windstagball.js","js/template.js"
             ]
         }
     ],

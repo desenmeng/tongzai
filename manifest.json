@@ -14,11 +14,10 @@
     "content_scripts": [
         {
             "matches": ["http://www.baidu.com/s?*"],
-            "css": [""],
             "js": [
                 "js/lib/jquery-1.9.1.min.js","js/lib/jquery.query.js",
                 "js/lib/firebase.js","js/lib/firebase-auth-client.js",
-                "js/lib/baiduTemplate.js","js/tongzai.js"
+                "js/lib/class.js","js/lib/baiduTemplate.js","js/tongzai.js"
             ]
         }
     ],

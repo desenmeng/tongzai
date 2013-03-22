@@ -1,0 +1,1022 @@
+#husky_chat_bar { 
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	width: 320px; 
+	height: 100%; 
+	border: 0; 
+	border-left: 1px solid #8e8e8e; 
+	margin: 0; 
+	padding: 0; 
+	font-family: '微软雅黑','宋体', Arial, sans-serif; 
+	font-size: 15px; 
+	line-height: 1.5em; 
+	color: #333; 
+	background: #F8F8F8;
+}
+
+p.husky_chat_sidebar_message_body_p{
+	font-family: 'Helvetica Neue', Arial, sans-serif; 
+	font-size: 13px; 
+	line-height: 1.5em; 
+	color: #333; 
+	display: block;
+	list-style-type: none;
+	text-align: left;
+}
+
+a.husky_chat_sidebar_message_body_p{
+	text-decoration: none;
+	font-size: 13px;
+	color: #00B4DC;
+}
+
+#husky_chat_sidebar {  
+	width: 320px; 
+	height: 100%;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+	#husky_chat_sidebar_inner_shadow { 
+		position: fixed; 
+		top: 0; 
+		left: 0; 
+		z-index: 314159265; 
+		width: 3px; 
+		height: 100%; 
+		/*background: url('chrome-extension://__MSG_@@extension_id__/images/inner-shadow.png') repeat-y;*/
+        background: url('../../../../Downloads/Tongzai/images/inner-shadow.png') repeat-y;
+	}
+
+/*stuff in the header*/
+
+	#husky_chat_sidebar_header {    
+		height: 50px; 
+		width: 320px; 
+		background: #43a3cc url('../../../../Downloads/Tongzai/images/header-bg.png') repeat-x;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); 
+	}
+
+		#husky_chat_sidebar_logo { 
+			display: block; 
+			float: left; 
+			width: 120px; 
+			height: 0; 
+			overflow: hidden; 
+			margin: 8px 16px 14px 16px; 
+			padding-top: 28px; 
+			background: url('../../../../Downloads/Tongzai/images/header-logo.png') no-repeat;
+        }
+		
+		/*main chat room user list*/
+		#husky_chat_sidebar_online_pop_up_toggle {
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+			display: block;
+			text-decoration: none;
+			list-style: none;
+			background-image: none;
+			}
+
+		ul#husky_chat_sidebar_header_links { 
+			font-family: Arial, Helvetica, sans-serif;		
+			float: right; 
+			height: 50px;
+			margin: 0; 
+			padding: 0; 
+			border-left: 1px solid #317492; 
+			list-style: none; 
+			background-image: none;
+		}
+		
+		li#husky_chat_room_online_users{
+				display: block; 
+				margin: 0;
+				padding: 0;
+				border-right: 1px solid #317492; 
+				float: left; 	
+				list-style: none; 
+				background-image: none;
+		}
+		
+			li#husky_chat_room_online_users a { 
+				display: block; 
+				padding: 6px 16px 0 16px; 
+				border-right: 1px solid #317492; 
+				font-size: 13px; 
+				line-height: 43px; 
+				font-weight: bold; 
+				text-decoration: none; 
+				color: #fff; 
+				background: url('../../../../Downloads/Tongzai/images/header-button.png') 0 0 no-repeat;
+                text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+				-webkit-transition: padding 80ms linear; 
+				-moz-transition: padding 80ms linear; 
+				-o-transition: padding 80ms linear; 
+				transition: padding 80ms linear; 
+			}
+
+			li#husky_chat_room_online_users a:hover { 
+				padding: 0 16px 6px 16px; 
+				-webkit-transition: padding 80ms linear; 
+				-moz-transition: padding 80ms linear; 
+				-o-transition: padding 80ms linear; 
+				transition: padding 80ms linear; 
+			}
+
+			li#husky_chat_room_online_users a:active { 
+				padding: 2px 16px 4px 16px; 
+				background: url('../../../../Downloads/Tongzai/images/header-button.png') 0 -50px no-repeat;
+				-webkit-transition: padding 0 linear; 
+				-moz-transition: padding 0 linear; 
+				-o-transition: padding 0 linear; 
+				transition: padding 0 linear; 
+			}
+
+/*drop down user list*/
+		#husky_chat_sidebar_online_pop_up { 
+			position: absolute; 
+			top: 46px; 
+			right: 16px; 
+			width: 220px; 
+			z-index: 9999999;
+		}
+
+			#husky_chat_sidebar_online_pop_up_top { 
+				width: 220px; 
+				height: 14px; 
+				background: url('../../../../Downloads/Tongzai/images/online-list-pop-up-sprite.png') 0 0 no-repeat;
+                z-index: 9999999;
+			}
+
+			#husky_chat_sidebar_online_list { 
+				width: 220px; 
+				max-height: 500px; 
+				overflow: hidden; 
+				background: url('../../../../Downloads/Tongzai/images/online-list-pop-up-bg.png') repeat-y;
+            }
+
+				ul#husky_chat_sidebar_online_list { 
+					margin: 0 2px; 
+					padding: 5px 0; 
+					list-style: none; 
+					background-image: none;
+				}
+
+					/*this is a good place for a "class"*/
+					li#husky_room_online_username {
+						width: 220px; 
+						color: #888;
+						list-style: none; 
+						background-image: none;
+						overflow: hidden;
+						}
+
+					li#husky_room_online_username a { 
+						font-size: 13px;
+						display: block;
+						padding: 2px 16px;
+						text-decoration: none;
+						color: #00B4DC;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);}
+
+					li#husky_room_online_username a:hover { 
+						text-decoration: none;
+						color: #2db34a;
+						background: #3c3c3c;}
+					/*end online list "class"*/
+
+			#husky_chat_sidebar_online_pop_up_bottom { 
+				width: 220px; 
+				height: 9px; 
+				background: url('../../../../Downloads/Tongzai/images/online-list-pop-up-sprite.png') 0 -14px no-repeat;
+                z-index: 9999999;
+			}
+			
+/*lobby user list*/
+		#husky_lobby_sidebar_online_pop_up_toggle {
+			font-size: 13px;
+			font-family: Arial, Helvetica, sans-serif;
+			display: block;
+			text-decoration: none;
+			list-style: none;
+			background-image: none;
+			}
+
+		ul#husky_lobby_sidebar_header_links { 
+			font-family: Arial, Helvetica, sans-serif;		
+			float: right; 
+			height: 50px;
+			margin: 0; 
+			padding: 0; 
+			border-left: 1px solid #317492; 
+			list-style: none; 
+			background-image: none;
+		}
+		
+		li#husky_lobby_room_online_users{
+				display: block; 
+				margin: 0;
+				padding: 0;
+				border-right: 1px solid #317492; 
+				float: left; 	
+				list-style: none; 
+				background-image: none;
+		}
+		
+			li#husky_lobby_room_online_users a { 
+				display: block; 
+				padding: 6px 16px 0 16px; 
+				border-right: 1px solid #317492; 
+				font-size: 13px; 
+				line-height: 43px; 
+				font-weight: bold; 
+				text-decoration: none; 
+				color: #fff; 
+				background: url('../../../../Downloads/Tongzai/images/header-button.png') 0 0 no-repeat;
+                text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0;
+				-webkit-transition: padding 80ms linear; 
+				-moz-transition: padding 80ms linear; 
+				-o-transition: padding 80ms linear; 
+				transition: padding 80ms linear; 
+			}
+
+			li#husky_lobby_room_online_users a:hover { 
+				padding: 0 16px 6px 16px; 
+				-webkit-transition: padding 80ms linear; 
+				-moz-transition: padding 80ms linear; 
+				-o-transition: padding 80ms linear; 
+				transition: padding 80ms linear; 
+			}
+
+			li#husky_lobby_room_online_users a:active { 
+				padding: 2px 16px 4px 16px; 
+				background: url('../../../../Downloads/Tongzai/images/header-button.png') 0 -50px no-repeat;
+				-webkit-transition: padding 0 linear; 
+				-moz-transition: padding 0 linear; 
+				-o-transition: padding 0 linear; 
+				transition: padding 0 linear; 
+			}
+
+/*drop down user list*/
+		#husky_lobby_sidebar_online_pop_up { 
+			position: absolute; 
+			top: 46px; 
+			right: 16px; 
+			width: 220px; 
+			z-index: 9999999;
+		}
+
+			#husky_lobby_sidebar_online_pop_up_top { 
+				width: 220px; 
+				height: 14px; 
+				background: url('../../../../Downloads/Tongzai/images/online-list-pop-up-sprite.png') 0 0 no-repeat;
+				z-index: 9999999;
+			}
+
+			#husky_lobby_sidebar_online_list { 
+				width: 220px; 
+				max-height: 500px; 
+				overflow: hidden; 
+				background: url('../../../../Downloads/Tongzai/images/online-list-pop-up-bg.png') repeat-y;
+			}
+
+				ul#husky_lobby_sidebar_online_list { 
+					margin: 0 2px; 
+					padding: 5px 0; 
+					list-style: none; 
+					background-image: none;
+				}
+
+					/*this is a good place for a "class"*/
+					li#husky_lobby_online_username {
+						width: 220px; 
+						color: #888;
+						list-style: none; 
+						background-image: none;
+						overflow: hidden;
+						}
+
+					li#husky_lobby_online_username a { 
+						font-size: 13px;
+						display: block;
+						padding: 2px 16px;
+						text-decoration: none;
+						color: #00B4DC;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);}
+
+					li#husky_lobby_online_username a:hover { 
+						text-decoration: none;
+						color: #2db34a;
+						background: #3c3c3c;}
+					/*end online list "class"*/
+
+			#husky_lobby_sidebar_online_pop_up_bottom { 
+				width: 220px; 
+				height: 9px; 
+				background: url('../../../../Downloads/Tongzai/images/online-list-pop-up-sprite.png') 0 -14px no-repeat;
+				z-index: 9999999;
+			}			
+			
+			
+/*menu nav*/
+#husky_chat_nav { 
+	position: absolute; 
+	top: 50px; 
+	left: 0; 
+	width: 322px;
+	height: 25px; 
+	background: #eaeaea; 
+	border-bottom: 2px solid #ccc; 
+	border-top: 2px solid #ccc; 
+	text-align: center;
+	}
+	#husky_chat_sidebar_chat_home {
+		position: absolute;
+		left: 40px;
+		top: 5px;
+		width: 62px;
+		height: 16px;
+		background: url('../../../../Downloads/Tongzai/images/husky_settings_icons.png') 0px 0px no-repeat;
+		display: inline-block;
+	}
+	#husky_chat_sidebar_chat_home:hover {
+		background: url('../../../../Downloads/Tongzai/images/husky_settings_icons.png') 0px -20px no-repeat;
+	}
+	#husky_chat_sidebar_chat_home.active {
+		background: url('../../../../Downloads/Tongzai/images/husky_settings_icons.png') 0px -20px no-repeat;
+	}
+	#husky_chat_nav_trending {
+		position: absolute;
+		left: 200px;
+		top: 5px;
+		width: 100px;
+		height: 16px;
+		background: url('../../../../Downloads/Tongzai/images/husky_settings_icons.png') -160px 0px no-repeat;
+		display: inline-block;
+	}
+	#husky_chat_nav_trending:hover { 
+		background: url('../../../../Downloads/Tongzai/images/husky_settings_icons.png') -160px -20px no-repeat;
+	}	
+	#husky_chat_nav_trending.active { 
+		background: url('../../../../Downloads/Tongzai/images/husky_settings_icons.png') -160px -20px no-repeat;
+	}
+	
+/*MESSAGE TELLING PEOPLE TO SWITCH BETWEEN DOMAIN AND URL*/
+#husky_chat_sidebar_chatswitch {    
+	width: 300px;
+	margin-left: 10px;
+	padding-top: 10px; 
+	border-bottom: 2px dotted #ccc; 
+	text-align: center;
+}
+
+#husky_chat_sidebar_chatswitch_text{   
+	width: 300px;	
+	text-align: center; 
+	font-size: 13px;  
+	color: #666; 
+	padding-bottom: 3px;
+}		
+
+#husky_chat_sidebar_chatswitch_pagespecific_url{
+	display: block;
+	position: absolute; 
+	top: 25px; 
+	height: 16px;
+	width: 300px;
+	margin-left: 0px;	
+	text-align: center;
+	float: left; 
+	font-size: 11px; 
+	line-height: 1.5em; 
+	color: #666; 
+	overflow: hidden;
+	letter-spacing: 0px;
+}
+			
+/*drop down nav*/			
+	#husky_chat_nav_share { 
+		font-family: 'Helvetica Neue', Arial, sans-serif; 
+		font-size: 14px;
+		font-weight: bold;
+		color: #00B4DC;
+		margin: 3px 0px 0px 10px;
+		border-right: 1px solid #317492; 
+		}	
+		#husky_chat_nav_share a { 
+			float: right; 
+			margin: 2px 5px 0px 0px;
+			width: 16px;
+			height: 25px;
+			}
+		#husky_chat_nav_share a:hover { 
+			float: right; 
+			margin: 2px 5px 0px 0px;
+			width: 16px;
+			height: 16px;
+			}
+	#husky_chat_nav_feedback { }
+		#husky_chat_nav_feedback a { 
+			float: left; 
+			margin: 2px 5px 0px 0px;
+			width: 16px;
+			height: 16px;
+			}
+		#husky_chat_nav_feedback a:hover { 
+			}	
+
+
+/*messages*/
+
+	#husky_chat_sidebar_conversation_window { 
+		width: 320px;
+		list-style: none; 
+		background-color: #F8F8F8;
+	
+		-webkit-box-flex: 1;
+}
+	
+		#husky_lobby_chat_container {
+			position: absolute;
+			top: 300px;
+		}
+	
+		#husky_lobby_conversation_stream { 
+			float: left; 
+			width: 322px; 
+			margin: auto;
+			border-top: 2px solid #ccc; 
+			padding: 10px 0 0 0; 
+			list-style: none; 
+			background-image: none;
+		}	
+
+		#husky_chat_url_conversation_stream { 
+			float: left; 
+			width: 320px; 
+			padding: 5px 0 0 0; 
+			list-style: none; 	
+		
+}
+
+			.husky_chat_sidebar_message { 
+				float: left; 
+				width: 320px; 
+				margin: 0px; 
+				padding: 0; 
+				list-style: none; 
+				background-image: none;
+			}
+			
+
+				.husky_chat_sidebar_message_you { 
+					float: right; 
+					margin-right: 6px; 
+					list-style: none; 
+					background-image: none;
+					}
+					.husky_chat_sidebar_message_you .husky_chat_sidebar_message_info { 
+						float: right; 
+						}
+					.husky_chat_sidebar_message_you .husky_chat_sidebar_message_sender { float: right; }
+					.husky_chat_sidebar_message_you .husky_chat_sidebar_message_timestamp { float: right; }
+					.husky_chat_sidebar_message_you .husky_chat_sidebar_message_body { float: right; }
+
+				.husky_chat_sidebar_message_else { 
+					float: left; 
+					margin-left: 6px; 
+					list-style: none; 
+					background-image: none;
+					}
+					.husky_chat_sidebar_message_else .husky_chat_sidebar_message_info { float: left; }
+					.husky_chat_sidebar_message_else .husky_chat_sidebar_message_sender { float: left; }
+					.husky_chat_sidebar_message_else .husky_chat_sidebar_message_timestamp { float: left; }
+					.husky_chat_sidebar_message_else .husky_chat_sidebar_message_body { float: left; }
+
+				.husky_chat_sidebar_message_info { margin: 0 0 5px 0; }
+				.husky_chat_sidebar_message_sender { 
+					margin: 0 10px;
+					text-decoration: none; 
+ 					}
+					.husky_chat_sidebar_message_sender a { 
+							font-size: 13px;
+							text-decoration: none; 
+							color: #00B4DC; 
+							}
+					.husky_chat_sidebar_message_sender a:hover { 
+							text-decoration: none; 
+							color: #000;
+							}
+					a#husky_chat_sidebar_event_name_username {
+						font-family: 'Helvetica Neue', Arial, sans-serif; 
+						text-decoration: none;
+						text-align: right;
+						font-size: 13px;
+						color: #4395EB; 
+					}
+				.husky_chat_sidebar_message_timestamp { 
+						font-size: 11px; 
+						color: #999; 
+						border-bottom: 0px;
+						}
+				.husky_chat_sidebar_message_body { 
+					clear: both; 
+					max-width: 220px; 
+					margin: 0 10px 8px 0; 
+					padding: 5px 12px 5px 12px; 
+					border-bottom: 3px solid #ABB6C4; 
+					background: #fff; 
+					border-radius: 5px; 
+}
+					.husky_chat_sidebar_message_body p { 
+						margin: 0 0 5px 0; 
+						line-height: 1em; 
+						word-wrap: break-word;
+						}
+
+					.husky_chat_sidebar_message_body a { 
+						text-decoration: none; 
+						color: #3d91b6; 
+						}
+
+					.husky_chat_sidebar_message_body a:hover { 
+						text-decoration: none; 
+						color: #333; 
+						}
+
+			.husky_chat_sidebar_event { 
+				float: left; 
+				width: 320px; 
+				margin-top: 5px;
+				margin-right: 0px;
+				margin-left: 0px;
+				margin-bottom: 5px; 
+				border-top: 1px solid #ddd; 
+				border-bottom: 1px solid #ddd; 
+				background: #eaeaea; 
+				}
+				.husky_chat_sidebar_event_body { 
+					float: left; 
+					margin: 5px 15px; 
+					font-size: 11px; 
+					line-height: 1em; 
+					color: #666; 
+					}
+				.husky_chat_sidebar_event_name { 
+					color: #333;
+					}
+					.husky_chat_sidebar_event_name a { 
+						text-decoration: none; 
+						color: #333; 
+						}
+					.husky_chat_sidebar_event_name a:hover { 
+						text-decoration: underline; 
+						color: #333; 
+						}
+					.husky_chat_sidebar_event_timestamp { 
+						border-bottom: 0px;
+						color: #bbb; }
+
+
+/*Sending messages to main chat*/
+	#husky_chat_send_message_module { 	  
+		height: 65px;   
+		width: 320px;   
+		background: url('../../../../Downloads/Tongzai/images/footer-bg.png') repeat;
+}
+
+	#husky_chat_send_message_module_wrap { 
+		margin: auto;	
+		width: 95%;
+		height: 60px;
+		border: 1px solid #c3c3c3; 
+		background: #fff; 
+		-webkit-border-top-left-radius: 5px; 
+		-webkit-border-bottom-left-radius: 5px; 
+		-moz-border-top-left-radius: 5px; 
+		-moz-border-bottom-left-radius: 5px; 
+		border-top-left-radius: 5px; 
+		border-bottom-left-radius: 5px; 
+		-webkit-border-top-right-radius: 5px; 
+		-webkit-border-bottom-right-radius: 5px; 
+		-moz-border-top-right-radius: 5px; 
+		-moz-border-bottom-right-radius: 5px; 
+		border-top-right-radius: 5px; 
+		border-bottom-right-radius: 5px;
+		}
+
+	#husky_chat_send_message_module_wrap_textarea{  
+		height: 50px;  
+		width: 75%;
+		padding: 3px 4px; 
+		font-family: 'Helvetica Neue', Arial, sans-serif; 
+		font-style: normal;
+		font-size: 15px; 
+		color: #333; 
+		background: #fff; 
+		resize: none; 
+		line-height: 1.3em; 
+		outline: 0px; 
+		border: 0px; 		
+		}
+
+#husky_chat_send_message_module_sendbutton { 
+	float: right; 
+	width: 60px; 
+	height: 0; 
+	margin: 0 0 0 0;
+	overflow: hidden; 
+	padding-top: 60px; 
+	background: url('../../../../Downloads/Tongzai/images/send-button.png') 0 0 repeat-x;
+	}
+	#husky_chat_send_message_module_sendbutton:hover { background: url('../../../../Downloads/Tongzai/images/send-button.png') 0 -60px repeat-x; }
+	#husky_chat_send_message_module_sendbutton:active { background: url('../../../../Downloads/Tongzai/images/send-button.png') 0 -121px repeat-x; }
+
+/*Sending messages to lobby*/
+	#husky_lobby_send_message_module { 
+		display: none;
+		position: absolute; 
+		bottom: 0px; 
+		height: 65px; 
+		border-top: 1px solid #ccc; 
+		float: left; 
+		width: 322px; 
+		padding: 5px 0px; 
+		border-top: 1px solid #ccc; 
+		background: url('../../../../Downloads/Tongzai/images/footer-bg.png') repeat;
+		}
+
+	#husky_lobby_send_message_module_wrap { 
+		margin: auto;	
+		width: 95%;
+		height: 60px;
+		border: 2px solid #c3c3c3; 
+		background: #fff; 
+		-webkit-border-top-left-radius: 5px; 
+		-webkit-border-bottom-left-radius: 5px; 
+		-moz-border-top-left-radius: 5px; 
+		-moz-border-bottom-left-radius: 5px; 
+		border-top-left-radius: 5px; 
+		border-bottom-left-radius: 5px; 
+		-webkit-border-top-right-radius: 5px; 
+		-webkit-border-bottom-right-radius: 5px; 
+		-moz-border-top-right-radius: 5px; 
+		-moz-border-bottom-right-radius: 5px; 
+		border-top-right-radius: 5px; 
+		border-bottom-right-radius: 5px;
+		}
+
+	#husky_lobby_send_message_module_wrap_textarea { 
+		float: left; 
+		height: 50px; 
+		margin: 0; 
+		width: 75%;
+		padding: 3px 4px; 
+		font-family: 'Helvetica Neue', Arial, sans-serif; 
+		font-style: normal;
+		font-size: 13px; 
+		color: #333; 
+		background: #fff; 
+		resize: none; 
+		line-height: 1.3em; 
+		outline: 0px; 
+		border: 0px; 	
+		}
+
+#husky_lobby_send_message_module_sendbutton { 
+	float: right; 
+	width: 60px; 
+	height: 0; 
+	margin: 0 0 0 0;
+	overflow: hidden; 
+	padding-top: 60px; 
+	background: url('../../../../Downloads/Tongzai/images/send-button.png') 0 0 repeat-x;
+	}
+	#husky_lobby_send_message_module_sendbutton:hover { background: url('../../../../Downloads/Tongzai/images/send-button.png') 0 -60px repeat-x; }
+	#husky_lobby_send_message_module_sendbutton:active { background: url('../../../../Downloads/Tongzai/images/send-button.png') 0 -121px repeat-x; }
+
+			
+/*temporary popup in place*/
+#husky_chat_nav_share_popup { 
+	position: absolute; 
+	bottom: 0px; 
+	left: -55px; 
+	width: 52px;
+	height: 25px; 
+	border: 1px solid #ccc; 
+	background: #eaeaea; 
+	}
+
+#husky_chat_nav_share_popup_twitter { }
+	#husky_chat_nav_share_popup_twitter a { 
+		float: left; 
+		width: 16px; 
+		height: 16px;
+		margin: 5px 5px; 
+		background: url('../../../../Downloads/Tongzai/images/share-twitter-16.png') no-repeat;
+		}
+#husky_chat_nav_share_popup_facebook { }
+	#husky_chat_nav_share_popup_facebook a { 
+		float: left; 
+		width: 16px; 
+		margin: 5px 5px; 
+		height: 16px;
+		background: url('../../../../Downloads/Tongzai/images/share-facebook-16.png') no-repeat;
+		}
+		
+		
+		
+/*TRNEDING STUFF IN HERE*/
+
+#husky_trending_container_window { 
+	float: left; 
+	width: 322px;
+	height: 250px;
+	padding: 80px 0 80px; 
+	list-style: none; 
+	background-image: none;
+}
+
+	#husky_trending_container_stream { 
+		float: left; 
+		width: 322px; 
+		height: 250px;
+		margin-right: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		margin-left: 0px; 
+		padding: 5px 0 0 0; 
+		list-style: none; 
+		background-image: none;
+		overflow: none;
+	}	
+
+	#husky_trending_headline{
+		position: absolute;
+		font-family: Arial, Helvetica, sans-serif;
+		width: 322px;
+		margin: auto auto;
+		padding: 5px;
+		background: none;
+		border-bottom: 2px solid #ccc; 		
+		left: 0px;
+		top: 80px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	
+	#husky_lobby_headline{
+		position: absolute;
+		font-family: Arial, Helvetica, sans-serif;
+		width: 322px;
+		margin: auto auto;
+		padding: 5px;
+		background: none;
+		border-top: 2px solid #ccc; 		
+		left: 0px;
+		top: 270px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: bold;
+	}
+			
+#husky_trending_list_one{
+	position: absolute;
+	width: 100%;
+	border: 0px;
+	background: none;
+	left: 20px;
+	top: 120px;
+}
+
+#husky_trending_list_one_domain{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	left: 0px;
+	width: 290px;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+	color: #00B4DC;
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+#husky_trending_list_one_domain:visited{
+	text-decoration: none;
+	color: #00B4DC;
+}
+
+#husky_trending_list_one_domain:hover{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_one_domain:active{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_two{
+	position: absolute;
+	width: 100%;
+	border: 0px;
+	background: none;
+	left: 20px;
+	top: 150px;
+}
+
+#husky_trending_list_two_domain{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	left: 0px;
+	width: 290px;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+	color: #00B4DC;
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+#husky_trending_list_two_domain:visited{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_two_domain:hover{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_two_domain:active{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_three{
+	position: absolute;
+	width: 100%;
+	border: 0px;
+	background: none;
+	left: 20px;
+	top: 180px;
+}
+
+#husky_trending_list_three_domain{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	left: 0px;
+	width: 290px;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+	color: #00B4DC;
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+#husky_trending_list_three_domain:visited{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_three_domain:hover{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_three_domain:active{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_four{
+	position: absolute;
+	width: 100%;
+	border: 0px;
+	background: none;
+	left: 20px;
+	top: 210px;
+}
+
+#husky_trending_list_four_domain{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	left: 0px;
+	width: 290px;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+	color: #00B4DC;
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+#husky_trending_list_four_domain:visited{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_four_domain:hover{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_four_domain:active{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_five{
+	position: absolute;
+	width: 100%;
+	border: 0px;
+	background: none;
+	left: 20px;
+	top: 240px;
+}
+
+#husky_trending_list_five_domain{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	left: 0px;
+	width: 290px;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: left;
+	color: #00B4DC;
+	white-space: nowrap; 
+	overflow: hidden;
+}
+
+#husky_trending_list_five_domain:visited{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_five_domain:hover{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_five_domain:active{
+	color: #00B4DC;
+	text-decoration: none;
+}
+
+#husky_trending_list_one_usercount{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	color: #666;
+	font-size: 11px;
+	left: 10px;
+	top: 20px;
+}
+
+#husky_trending_list_two_usercount{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	font-size: 11px;
+	left: 10px;
+	top: 25px;	
+	color: #666;
+}
+
+#husky_trending_list_three_usercount{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	font-size: 11px;
+	left: 10px;
+	top: 25px;	
+	color: #666;
+
+}
+
+#husky_trending_list_four_usercount{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	font-size: 11px;
+	left: 10px;
+	top: 25px;	
+	color: #666;
+
+}
+
+#husky_trending_list_five_usercount{
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	font-size: 11px;
+	left: 10px;
+	top: 25px;
+	color: #666;
+
+}

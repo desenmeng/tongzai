@@ -1,0 +1,37 @@
+#tabs{
+    -webkit-box-flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+#husky_chat_sidebar_chatswitch_text a{
+     text-decoration: none;
+     color: #2680ED;
+     font-size: 16px;
+     font-weight: bold;
+ }
+
+#husky_chat_sidebar_chatswitch_text a:hover{
+    /*text-decoration: underline;*/
+    color: #F7062D;
+}
+
+#hot_topics_cloud {
+    position:relative;
+    width: 350px;
+    height: 350px;
+    top: 100px;
+    left: 0px;}
+#hot_topics_cloud a {
+    position:absolute;
+    top:0px; left:0px;
+    font-family: Microsoft YaHei;
+    color: #2680ED;
+    font-weight:bold;
+    text-decoration:none;
+}
+#hot_topics_cloud a:hover {
+    color: #F7062D;
+    font-weight: 1000;
+
+}
+

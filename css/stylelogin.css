@@ -1,0 +1,530 @@
+#husky_login_bar { 
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	width: 322px;
+	height: 100%;
+	border: 0; 
+	border-left: 1px solid #8e8e8e; 
+	margin: 0; 
+	padding: 0; 
+	font-family: 'Helvetica Neue', Arial, sans-serif; 
+	font-size: 13px; 
+	line-height: 1.5em; 
+	color: #333; 
+	background: #f0f0f0;
+}
+
+#husky_login_sidebar { 
+	float: left; 
+	width: 100%; 
+}
+
+	#husky_login_sidebar_inner_shadow { 
+		position: fixed; 
+		top: 0; 
+		left: 0; 
+		z-index: 314159265; 
+		width: 3px; 
+		height: 100%; 
+		background: url('chrome-extension://__MSG_@@extension_id__/images/inner-shadow.png') repeat-y; 
+	}
+
+	#husky_login_sidebar_header { 
+		position: absolute;
+		top: 0; 
+		left: 0; 
+		height: 50px; 
+		width: 100%; 
+		background: #43a3cc url('chrome-extension://__MSG_@@extension_id__/images/header-bg.png') repeat-x; 
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.5); 
+	}
+
+		#husky_login_sidebar_logo { 
+			display: block; 
+			float: left; 
+			width: 99px; 
+			height: 0; 
+			overflow: hidden; 
+			margin: 8px 16px 14px 16px; 
+			padding-top: 28px; 
+			background: url('chrome-extension://__MSG_@@extension_id__/images/header-logo.png') no-repeat; 
+		}
+
+		#husky_login_sidebar_header_links { 
+			float: right; 
+			margin: 0; 
+			padding: 0; 
+			border-left: 1px solid #317492; 
+		}
+
+			#husky_login_sidebar_header_links li { 
+				float: left; 
+				margin: 0; 
+				padding: 0; 
+				list-style: none; 
+			}
+
+			#husky_login_sidebar_header_links a { 
+				display: block; 
+				padding: 6px 16px 0 16px; 
+				border-right: 1px solid #317492; 
+				font-size: 13px; 
+				line-height: 43px; 
+				font-weight: bold; 
+				text-decoration: none; 
+				color: #fff; 
+				background: url('chrome-extension://__MSG_@@extension_id__/images/header-button.png') 0 0 no-repeat; 
+				text-shadow: rgba(0, 0, 0, 0.5) 0 1px 0; 
+				-webkit-transition: padding 80ms linear; 
+				-moz-transition: padding 80ms linear; 
+				-o-transition: padding 80ms linear; 
+				transition: padding 80ms linear; 
+			}
+
+			#husky_login_sidebar_header_links a:hover { 
+				padding: 0 16px 6px 16px; 
+				-webkit-transition: padding 80ms linear; 
+				-moz-transition: padding 80ms linear; 
+				-o-transition: padding 80ms linear; 
+				transition: padding 80ms linear; 
+			}
+
+			#husky_login_sidebar_header_links a:active { 
+				padding: 2px 16px 4px 16px; 
+				background: url('chrome-extension://__MSG_@@extension_id__/images/header-button.png') 0 -50px no-repeat; 
+				-webkit-transition: padding 0 linear; 
+				-moz-transition: padding 0 linear; 
+				-o-transition: padding 0 linear; 
+				transition: padding 0 linear; 
+			}
+
+		#husky_login_sidebar_online_pop_up { 
+			display: none; 
+			position: absolute; 
+			top: 46px; 
+			right: 16px; 
+			width: 220px; 
+		}
+
+			#husky_login_sidebar_online_pop_up_top { 
+				width: 220px; 
+				height: 14px; 
+				background: url('chrome-extension://__MSG_@@extension_id__/images/online-list-pop-up-sprite.png') 0 0 no-repeat; 
+			}
+
+			#husky_login_sidebar_online_list { 
+				width: 220px; 
+				max-height: 500px; 
+				overflow: auto; 
+				background: url('chrome-extension://__MSG_@@extension_id__/images/online-list-pop-up-bg.png') repeat-y; 
+			}
+
+				#husky_login_sidebar_online_list ul { 
+					margin: 0 2px; 
+					padding: 5px 0; 
+					list-style: none; 
+				}
+
+					#husky_login_sidebar_online_list li { 
+						margin: 0; 
+						padding: 0; 
+						color: #888; 
+					}
+
+					#husky_login_sidebar_online_list a { 
+							display: block; 
+							padding: 2px 16px; 
+							text-decoration: none; 
+							color: #888; 
+							text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5); 
+						}
+
+					#husky_login_sidebar_online_list a:hover { 
+							text-decoration: none; 
+							color: #ccc; 
+							background: #3c3c3c; 
+						}
+
+			#husky_login_sidebar_online_pop_up_bottom { 
+				width: 220px; 
+				height: 9px; 
+				background: url('chrome-extension://__MSG_@@extension_id__/images/online-list-pop-up-sprite.png') 0 -14px no-repeat; 
+			}
+
+	#husky_login_sidebar_conversation_window { 
+		float: left; 
+		width: 100%; 
+		height: auto;
+		padding: 50px 0 112px;
+	}
+
+		#husky_login_sidebar_conversation_stream { 
+			float: left; 
+			width: 100%; 
+			margin: 0; 
+			padding: 16px 0 0 0; 
+			list-style: none; 
+		}
+
+			.husky_login_sidebar_message { 
+				float: left; 
+				width: 100%; 
+				margin-bottom: 16px; 
+				padding: 0; 
+			}
+
+				.husky_login_sidebar_message_you { 
+					float: right; 
+					margin-right: 6px; 
+					background: url('chrome-extension://__MSG_@@extension_id__/images/message-triangle-you.gif') top right no-repeat; 
+				}
+
+					.husky_login_sidebar_message_you .husky_login_sidebar_message_info { float: right; }
+	
+						.husky_login_sidebar_message_you .husky_login_sidebar_message_sender { float: right; }
+	
+						.husky_login_sidebar_message_you .husky_login_sidebar_message_timestamp { float: right; }
+	
+					.husky_login_sidebar_message_you .husky_login_sidebar_message_body { float: right; }
+
+				.husky_login_sidebar_message_else { 
+					float: left; 
+					margin-left: 6px; 
+					background: url('chrome-extension://__MSG_@@extension_id__/images/message-triangle-else.gif') top left no-repeat; 
+				}
+
+					.husky_login_sidebar_message_else .husky_login_sidebar_message_info { float: left; }
+
+						.husky_login_sidebar_message_else .husky_login_sidebar_message_sender { float: left; }
+
+						.husky_login_sidebar_message_else .husky_login_sidebar_message_timestamp { float: left; }
+
+					.husky_login_sidebar_message_else .husky_login_sidebar_message_body { float: left; }
+
+				.husky_login_sidebar_message_info { margin: 0 12px 4px 12px; }
+
+					.husky_login_sidebar_message_sender { margin: 0 10px; }
+
+						.husky_login_sidebar_message_sender a { 
+							text-decoration: none; 
+							color: #333; 
+						}
+
+						.husky_login_sidebar_message_sender a:hover { 
+							text-decoration: underline; 
+							color: #333; 
+						}
+
+					.husky_login_sidebar_message_timestamp { 
+						font-size: 11px; 
+						color: #999; 
+					}
+
+				.husky_login_sidebar_message_body { 
+					clear: both; 
+					max-width: 220px; 
+					margin: 0 10px; 
+					padding: 10px 12px 5px 12px; 
+					border-bottom: 2px solid #e5e5e5; 
+					background: #fff; 
+					border-radius: 4px; 
+				}
+
+					.husky_login_sidebar_message_body p { 
+						margin: 0 0 5px 0; 
+						line-height: 1.3em; 
+					}
+
+					.husky_login_sidebar_message_body a { 
+						text-decoration: underline; 
+						color: #3d91b6; 
+					}
+
+					.husky_login_sidebar_message_body a:hover { 
+						text-decoration: underline; 
+						color: #333; 
+					}
+
+			.husky_login_sidebar_event { 
+				float: left; 
+				width: 100%; 
+				margin-bottom: 16px; 
+				border-top: 1px solid #ddd; 
+				border-bottom: 1px solid #ddd; 
+				background: #eaeaea; 
+			}
+
+				.husky_login_sidebar_event_body { 
+					float: left; 
+					margin: 8px 16px; 
+					font-size: 11px; 
+					line-height: 1.4em; 
+					color: #666; 
+				}
+
+					.husky_login_sidebar_event_name { color: #333; }
+
+						.husky_login_sidebar_event_name a { 
+							text-decoration: none; 
+							color: #333; 
+						}
+
+						.husky_login_sidebar_event_name a:hover { 
+							text-decoration: underline; 
+							color: #333; 
+						}
+
+					.husky_login_sidebar_event_timestamp { color: #bbb; }
+
+	#husky_login_sidebar_footer { 
+			position: absolute; 
+			bottom: 0; 
+			left: 0; 
+			width: 100%; 
+			background: #eaeaea; 
+	}
+
+		#husky_login_sidebar_message_module { 
+			float: left; 
+			width: 100%; 
+			padding: 10px 0; 
+			border-top: 1px solid #ccc; 
+			background: url('chrome-extension://__MSG_@@extension_id__/images/footer-bg.png') repeat-x; 
+		}
+
+			#husky_login_sidebar_message_box_wrap { 
+	float: left; 
+	margin-left: 10px; 
+	padding: 3px 4px; 
+	border: 2px solid #c3c3c3; 
+	border-right: 2px solid #c3c3c3; background: #fff; 
+	-webkit-border-top-left-radius: 5px; 
+	-webkit-border-bottom-left-radius: 5px; 
+	-moz-border-top-left-radius: 5px; 
+	-moz-border-bottom-left-radius: 5px; 
+	border-top-left-radius: 5px; 
+	border-bottom-left-radius: 5px; 
+}
+
+	#husky_login_sidebar_message_box { 
+		float: left; 
+		width: 215px; 
+		height: 50px; 
+		margin: 0; 
+		padding: 0; 
+		border: 0; 
+		font-family: 'Helvetica Neue', Arial, sans-serif; 
+		font-size: 13px; 
+		color: #333; 
+		background: #fff; 
+		resize: none; 
+		line-height: 1.3em; 
+		outline: 0; 
+	}
+
+#husky_login_sidebar_message_send { 
+	float: left; 
+	width: 60px; 
+	height: 0; 
+	overflow: hidden; 
+	margin-right: 10px; 
+	padding-top: 60px; 
+	background: url('chrome-extension://__MSG_@@extension_id__/images/send-button.png') 0 0 repeat-x; 
+}
+
+			#husky_login_sidebar_message_send:hover { background: url('chrome-extension://__MSG_@@extension_id__/images/send-button.png') 0 -60px repeat-x; }
+
+			#husky_login_sidebar_message_send:active { background: url('chrome-extension://__MSG_@@extension_id__/images/send-button.png') 0 -120px repeat-x; }
+
+#husky_login_sidebar_settings { 
+	float: left; 
+	width: 100%; 
+	margin: 0; 
+	padding: 5px 0; 
+	border-top: 1px solid #ccc; 
+	background: url('chrome-extension://__MSG_@@extension_id__/images/footer-bg.png') repeat-x; 
+}
+
+#husky_login_sidebar_settings li { 
+	padding: 0; 
+	font-size: 11px; 
+	color: #666; 
+	list-style: none; 
+}
+
+			#husky_login_sidebar_settings strong { 
+		font-size: 13px; 
+		color: #333; 
+	}
+
+				#husky_login_sidebar_settings strong a { 
+			text-decoration: none; 
+			color: #333; 
+		}
+
+				#husky_login_sidebar_settings strong a:hover { 
+			text-decoration: underline; 
+			color: #333; 
+		}
+
+			#husky_login_sidebar_settings a { 
+		text-decoration: none; 
+		color: #666; 
+	}
+
+			#husky_login_sidebar_settings a:hover { 
+	text-decoration: underline; 
+	color: #666; 
+}
+
+			#husky_login_sidebar_signed_in { 
+	float: left; 
+	margin: 0 0 0 10px; 
+}
+
+			#husky_lab_link { 
+	float: right; 
+	margin: 0 10px 0 0; 
+}
+
+#husky_login_splash { 
+	float: left; 
+	width: 100%; 
+	height: 100%; 
+	font-size: 11px; 
+	line-height: 1.5em; 
+	text-align: center; 
+	color: #fff; 
+	background: #47a3cf url('chrome-extension://__MSG_@@extension_id__/images/splash-bg.png') repeat-x; 
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5); 
+}
+
+	#splash_login_top_container { 
+		position: absolute; 
+		top: 10%; 
+		width: 322px; 
+	}
+
+		#husky_login_splash_logo { 
+			width: 240px; 
+			height: 0; 
+			margin: 0 auto 50px auto; 
+			padding-top: 150px; 
+			overflow: hidden; 
+			background: url('chrome-extension://__MSG_@@extension_id__/images/splash-logo.png') no-repeat; 
+		}
+
+		#husky_login_intro { 
+			font-size: 14px;
+			font-weight: bold;
+			text-align: center;
+			color: #FFFFFF;
+			margin: 0px 0px 16px 0px;
+		}
+		
+		#husky_engineered_by { 
+			font-size: 10px;
+			font-weight: bold;
+			text-align: center;
+			color: #FFFFFF;
+			margin: 0px 0px 16px 0px;
+		}
+
+		#husky_login_splash_sign_in { 
+			width: 178px; 
+			margin: 0 auto; 
+			padding: 0; 
+			list-style: none; 
+		}
+		
+			#husky_login_splash_sign_in li { 
+				margin: 0; 
+				padding: 0; 
+				list-style: none; 
+			}
+		
+				#husky_login_splash_sign_in_twitter a { 
+					display: block; 
+					width: 178px; 
+					height: 0; 
+					overflow: hidden; 
+					margin-top: 6px; 
+					padding-top: 26px;
+					background: url('chrome-extension://__MSG_@@extension_id__/images/sign-in-button-sprites.png') 0 0 no-repeat;
+					cursor: pointer;
+				}
+
+				#husky_login_splash_sign_in_facebook a { 
+					display: block; 
+					width: 178px; 
+					height: 0; 
+					overflow: hidden; 
+					margin-top: 6px; 
+					padding-top: 26px; 
+					background: url('chrome-extension://__MSG_@@extension_id__/images/sign-in-button-sprites.png') 0 -26px no-repeat; 
+					cursor: pointer;
+				}
+				
+				#husky_login_splash_sign_in_google a { 
+					display: block; 
+					width: 178px; 
+					height: 0; 
+					overflow: hidden; 
+					margin-top: 6px; 
+					padding-top: 26px; 
+					background: url('chrome-extension://__MSG_@@extension_id__/images/sign-in-button-sprites.png') 0 -52px no-repeat; 
+					cursor: pointer;
+				}
+				
+				#husky_login_splash_sign_in_linkedin a { 
+					display: block; 
+					width: 178px; 
+					height: 0; 
+					overflow: hidden; 
+					margin-top: 6px; 
+					padding-top: 26px; 
+					background: url('chrome-extension://__MSG_@@extension_id__/images/sign-in-button-sprites.png') 0 -78px no-repeat; 
+					cursor: pointer;
+				}
+				
+				#husky_login_splash_sign_in_openid a { 
+					display: block; 
+					width: 178px; 
+					height: 0; 
+					overflow: hidden; 
+					margin-top: 6px; 
+					padding-top: 26px; 
+					background: url('chrome-extension://__MSG_@@extension_id__/images/sign-in-button-sprites.png') 0 -104px no-repeat; 
+					cursor: pointer;
+				}
+												
+	#splash_login_bottom_container { 
+		position: absolute; 
+		top: 475px; 
+		width: 322px; 
+	}
+
+	#husky_lab_co_splash_logo { 
+		display: block; 
+		width: 136px; 
+		height: 0; 
+		overflow: hidden; 
+		margin: 4px auto 0 auto; 
+		padding-top: 47px; 
+		background: url('chrome-extension://__MSG_@@extension_id__/images/splash-husky-co-logo.png') no-repeat; 
+	}
+	
+	#husky_tos_agreement a { 
+		text-decoration: none; 
+		color: #FFFFFF; 
+	}
+	
+	#husky_tos_agreement a:hover { 
+		text-decoration: none; 
+		color: #FFFFFF; 
+	}
+	
+	#husky_tos_agreement {
+		margin: 10px 0px 10px 0px;
+	}

@@ -1,0 +1,133 @@
+#husky_share_container{
+	width: 550px;
+	height: 250px;
+	position: relative;
+	top: 10%;
+	left: 30%;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/images/share-grid-bg.png');
+}
+
+#husky_share_logo{
+	width: 270px;
+	height: 115px;
+	position: absolute;
+	top: -10px;
+	left: 0;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/images/share-logo.png');
+}
+
+#husky_share_headline{
+	width: 240px;
+	height: 50px;
+	position: relative;
+	left: 300px;
+	top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: rgb(0,182,223);
+	}
+
+#husky_share_box{
+	position: absolute;
+	left: 10px;
+	top: 80px;
+}
+
+#husky_share_resizedTextbox {
+	width: 525px; 
+	height: 100px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+
+#husky_share_social{
+	position: absolute;
+	width: 200px;
+	height: 35px;
+	right: 150px;
+	bottom: 23px;	
+}
+
+#husky_share_social_facebook{}
+#husky_share_social_twitter{}
+#husky_share_social_linkedin{}
+#husky_share_social_google_plus{}
+
+#husky_share_social_facebook a {
+	float: left; 
+	margin: 5px 5px 5px 5px; 
+	width: 32px;
+	height: 32px;
+	background: url('chrome-extension://__MSG_@@extension_id__/images/share-facebook.png');
+	/* this is useful for when we have signed in vs signed out states
+	opacity: 0.4;
+	*/
+}
+
+#husky_share_social_twitter a {
+	float: left; 
+	margin: 5px 5px 5px 5px; 
+	width: 32px;
+	height: 32px;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/images/share-twitter.png');
+	/* this is useful for when we have signed in vs signed out states
+	opacity: 0.4;
+	*/
+}
+
+#husky_share_social_linkedin a {
+	float: left; 
+	margin: 5px 5px 5px 5px; 
+	width: 32px;
+	height: 32px;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/images/share-linkedin.png');
+	/* this is useful for when we have signed in vs signed out states
+	opacity: 0.4;
+	*/
+}
+
+#husky_share_social_google_plus a {
+	float: left; 
+	margin: 5px 5px 5px 5px; 
+	width: 32px;
+	height: 32px;
+	background-image: url('chrome-extension://__MSG_@@extension_id__/images/share-google-plus.png');
+	/* this is useful for when we have signed in vs signed out states
+	opacity: 0.4;
+	*/
+}
+
+#husky_share_shareButton {
+	width: 150px;
+	position: absolute;
+	right: 15px;
+	bottom: 18px;	
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #00b6df), color-stop(1, #0096ad) );
+	background:-moz-linear-gradient( center top, #00b6df 5%, #0096ad 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00b6df', endColorstr='#0096ad');
+	background-color:#00b6df;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #000000;
+}
+
+#husky_share_shareButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0096ad), color-stop(1, #00b6df) );
+	background:-moz-linear-gradient( center top, #0096ad 5%, #00b6df 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0096ad', endColorstr='#00b6df');
+	background-color:#0096ad;
+}
+
+#husky_share_shareButton:active {
+	position:relative;
+	top:1px;
+}

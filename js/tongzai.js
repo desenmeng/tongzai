@@ -22,7 +22,6 @@ function refreshUser(){
 	if($user[0]){
 		$user[0].innerHTML = $hiquc+' Online';
 	}
-	
 }
 
 step=1;

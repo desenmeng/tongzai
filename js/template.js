@@ -65,9 +65,16 @@ $("#user-confirm-button").click(function(){
                 $(this).hide();
                 $("#husky_chat_send_message_module_wrap").fadeIn();
             });
+        localStorage.setItem("userName",$("#user-confirm-input").val());
+    }
+    else{
+        alert("输个名字吧 亲");
     }
 });
-
+if(localStorage.getItem("userName")){
+    $("#user_confirm").css("display","none");
+    $("#husky_chat_send_message_module_wrap").fadeIn();
+}
 function getTime(time){
     var hour = time.getHours();
     if(hour>12){
@@ -83,7 +90,7 @@ function getTime(time){
 function sendMessage(){
     if($("#husky_chat_send_message_module_wrap_textarea").val().trim()!=""){
         var data = {
-            name:"jiaHan Wang",
+            name:localStorage.getItem("userName"),
             time:getTime(new Date()),
             content:$("#husky_chat_send_message_module_wrap_textarea").val()
         };
@@ -130,7 +137,12 @@ function pushData(data){
 //watch the add event
 mdemoLimit.on('child_added', function(snapshot) {
 		var message = snapshot.val();
-		addMessageElse(message);
+        if(message.name == localStorage.getItem("userName")){
+            addMessageYou(message)
+        }
+        else{
+            addMessageElse(message);
+        }
 	});
 $("#queryWord").text($.query.get('wd'));
 $("#husky_chat_send_message_module_wrap_textarea").keydown(function(event){

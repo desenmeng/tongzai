@@ -11,16 +11,21 @@
  }
 
 #husky_chat_sidebar_chatswitch_text a:hover{
-    /*text-decoration: underline;*/
     color: #F7062D;
+}
+#hot_topics_cloud_wrapper{
+    width: 320px;
+    overflow: hidden;
+    -webkit-box-flex: 1;
 }
 
 #hot_topics_cloud {
     position:relative;
-    width: 350px;
+    margin-top: 30%;
+    width: 550px;
     height: 350px;
-    top: 100px;
-    left: 0px;}
+    left: -130px;
+}
 #hot_topics_cloud a {
     position:absolute;
     top:0px; left:0px;

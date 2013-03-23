@@ -1,19 +1,19 @@
-#husky_chat_bar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 320px;
-    height: 100%;
-    border: 0;
-    border-left: 1px solid #8e8e8e;
-    margin: 0;
-    padding: 0;
-    font-family: '微软雅黑','宋体', Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.5em;
-    color: #333;
-    background: #F8F8F8;
-    z-index: 1000;
+#husky_chat_bar { 
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	z-index: 1000;
+	width: 320px; 
+	height: 100%; 
+	border: 0; 
+	border-left: 1px solid #8e8e8e; 
+	margin: 0; 
+	padding: 0; 
+	font-family: '微软雅黑','宋体', Arial, sans-serif; 
+	font-size: 15px; 
+	line-height: 1.5em; 
+	color: #333; 
+	background: #F8F8F8;
 }
 
 p.husky_chat_sidebar_message_body_p{
@@ -39,7 +39,7 @@ a.husky_chat_sidebar_message_body_p{
 	-webkit-box-orient: vertical;
 }
 
-	#husky_chat_sidebar_inner_shadow { 
+#husky_chat_sidebar_inner_shadow {
 		position: fixed; 
 		top: 0; 
 		left: 0; 
@@ -73,16 +73,14 @@ a.husky_chat_sidebar_message_body_p{
 		/*main chat room user list*/
 		#husky_chat_sidebar_online_pop_up_toggle {
 			font-size: 13px;
-			font-family: Arial, Helvetica, sans-serif;
 			display: block;
 			text-decoration: none;
 			list-style: none;
 			background-image: none;
 			}
 
-		ul#husky_chat_sidebar_header_links { 
-			font-family: Arial, Helvetica, sans-serif;		
-			float: right; 
+		ul#husky_chat_sidebar_header_links {
+			float: right;
 			height: 50px;
 			margin: 0; 
 			padding: 0; 
@@ -106,7 +104,7 @@ a.husky_chat_sidebar_message_body_p{
 				padding: 6px 16px 0 16px; 
 				border-right: 1px solid #317492; 
 				font-size: 13px; 
-				line-height: 43px; 
+				line-height: 40px; 
 				font-weight: bold; 
 				text-decoration: none; 
 				color: #fff; 
@@ -457,7 +455,7 @@ a.husky_chat_sidebar_message_body_p{
 		#husky_chat_url_conversation_stream {
 			float: left;
 			width: 320px;
-			padding: 5px 0 0 0;
+			padding: 0px 0 0 0;
 			list-style: none;
 
 }

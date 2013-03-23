@@ -54,9 +54,9 @@ if($q){
 var hi = new Firebase('https://hi.firebaseio.com');
 var domain="https://hi.firebaseio.com/";
 if($q){
-	domain=domain+encodeURIComponent($q);
+	domain=domain+encodeURIComponent($q)+"/msgs";
 }else{
-	domain=domain+"mdemo";
+	domain=domain+"mdemo"+"/msgs";
 }
 var mdemo = new Firebase(domain);
 var mdemoLimit = mdemo.limit(1);

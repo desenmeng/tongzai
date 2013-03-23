@@ -111,7 +111,6 @@
 
 #user-confirm-input{
     display: inline-block;
-    height: 20px;
     padding: 4px 6px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -131,8 +130,8 @@
     -o-transition: border linear 0.2s, box-shadow linear 0.2s;
     transition: border linear 0.2s, box-shadow linear 0.2s;
     font-family: "微软雅黑";
-    width: 280px;
-    height: 40px;
+    width: 235px;
+    height: 42px;
     margin-left: 20px;
     margin-top: 10px;
 }

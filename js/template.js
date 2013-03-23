@@ -68,7 +68,7 @@ function getTime(time){
     return hour+":"+min+":"+sec;
 }
 function sendMessage(){
-    if($("#husky_chat_send_message_module_wrap_textarea").val()){
+    if($("#husky_chat_send_message_module_wrap_textarea").val().trim()!=""){
         var data = {
             name:"jiaHan Wang",
             time:getTime(new Date()),
@@ -78,7 +78,8 @@ function sendMessage(){
         $("#husky_chat_send_message_module_wrap_textarea").val("");
     }
     else{
-        alert("写点东西再发吧亲");
+        alert("写点东西吧 亲");
+        $("#husky_chat_send_message_module_wrap_textarea").val("");
     }
 }
 $("#husky_chat_send_message_module_sendbutton").click(function(){

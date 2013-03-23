@@ -115,6 +115,7 @@ function addMessageYou(data){
 function addMessageElse(data){
     var messageElseDom = baidu.template(messageElse,data);
     $("#husky_chat_url_conversation_stream").append(messageElseDom);
+	remind();
     //scroll To Last
     var toScrollHeight = $('#husky_chat_url_conversation_stream').scrollTop() + $(".husky_chat_sidebar_message:last").height();
     $('#husky_chat_url_conversation_stream').scrollTop(toScrollHeight);

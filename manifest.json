@@ -13,12 +13,18 @@
     },
     "content_scripts": [
         {
+<<<<<<< HEAD
             "matches": ["http://www.baidu.com/s*"],
             "css":[
                 "css/stylechat.css",
                 "css/jquery-ui-1.10.2.custom.css",
                 "css/bootstrap.min.css",
                 "css/myStyle.css"],
+=======
+            "matches": ["http://www.baidu.com/s*","http://www.baidu.com/baidu*"],
+			"exclude_globs":["http://www.baidu.com/search*"],
+            "css":["css/stylechat.css","css/jquery-ui-1.10.2.custom.css","css/myStyle.css"],
+>>>>>>> feb1578297a18a57b8ae2185b91ee3515057bc50
             "js": [
                 "js/lib/jquery-1.9.1.min.js","js/lib/jquery.query.js",
                 "js/lib/jquery-ui-1.10.2.min.js",

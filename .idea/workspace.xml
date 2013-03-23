@@ -20,21 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="template.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="template.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/template.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="30" selection-start="2529" selection-end="2529" vertical-scroll-proportion="0.0">
+            <state line="129" column="21" selection-start="6433" selection-end="6433" vertical-scroll-proportion="0.4045534">
               <folding>
-                <marker date="1364034141912" expanded="true" signature="368:385" placeholder="..." />
+                <marker date="1364035475046" expanded="true" signature="368:385" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myStyle.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="myStyle.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/myStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="19" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.7089041">
+            <state line="72" column="19" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -63,8 +63,15 @@
       <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="40" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="25" column="40" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1364035475023" expanded="true" signature="2:1741" placeholder="{&quot;name&quot;: &quot;与我同在&quot;...}" />
+                <marker date="1364035475023" expanded="true" signature="519:1358" placeholder="[...]" />
+                <marker date="1364035475023" expanded="true" signature="555:1352" placeholder="{&quot;run_at&quot;: &quot;document_end&quot;...}" />
+                <marker date="1364035475023" expanded="true" signature="642:894" placeholder="[...]" />
+                <marker date="1364035475023" expanded="true" signature="927:1304" placeholder="[...]" />
+                <marker date="1364035475023" expanded="true" signature="1498:1580" placeholder="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -284,28 +291,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/lib/jquery.windstagball.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="30" selection-start="2529" selection-end="2529" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1364034141912" expanded="true" signature="368:385" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="25" column="40" selection-start="807" selection-end="807" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1364035475023" expanded="true" signature="2:1741" placeholder="{&quot;name&quot;: &quot;与我同在&quot;...}" />
+            <marker date="1364035475023" expanded="true" signature="519:1358" placeholder="[...]" />
+            <marker date="1364035475023" expanded="true" signature="555:1352" placeholder="{&quot;run_at&quot;: &quot;document_end&quot;...}" />
+            <marker date="1364035475023" expanded="true" signature="642:894" placeholder="[...]" />
+            <marker date="1364035475023" expanded="true" signature="927:1304" placeholder="[...]" />
+            <marker date="1364035475023" expanded="true" signature="1498:1580" placeholder="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -316,10 +312,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/jquery.windstagball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/myStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="19" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.7089041">
+        <state line="72" column="19" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="21" selection-start="6433" selection-end="6433" vertical-scroll-proportion="0.4045534">
+          <folding>
+            <marker date="1364035475046" expanded="true" signature="368:385" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -10,7 +10,7 @@ function hot(data){
     //console.log(hot_topics);
     for(var i = 1 ; i <= 28 ; i ++){
         var hot_topic = $('<a>');
-        hot_topic.attr("href", hot_topics[i].url.replace("m.","www."));
+        hot_topic.attr("href", hot_topics[i].url.replace("m.","www.").replace("word","wd"));
         hot_topic.attr("target", "_blank");
         hot_topic.html(hot_topics[i].word);
         hot_topic.appendTo($tagCloud);
@@ -68,13 +68,18 @@ function getTime(time){
     return hour+":"+min+":"+sec;
 }
 function sendMessage(){
-    var data = {
-        name:"jiaHan Wang",
-        time:getTime(new Date()),
-        content:$("#husky_chat_send_message_module_wrap_textarea").val()
-    };
-    pushData(data);
-    $("#husky_chat_send_message_module_wrap_textarea").val("");
+    if($("#husky_chat_send_message_module_wrap_textarea").val()){
+        var data = {
+            name:"jiaHan Wang",
+            time:getTime(new Date()),
+            content:$("#husky_chat_send_message_module_wrap_textarea").val()
+        };
+        pushData(data);
+        $("#husky_chat_send_message_module_wrap_textarea").val("");
+    }
+    else{
+        alert("写点东西再发吧亲");
+    }
 }
 $("#husky_chat_send_message_module_sendbutton").click(function(){
     sendMessage();

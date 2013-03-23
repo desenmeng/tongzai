@@ -16,7 +16,7 @@
             speed: 10,
             depth: 300,
             howElliptical: 1,
-            fontsize: 12
+            fontsize: 10
         },
         param = $.extend({}, defaults, options || {}),
         selector = $(this).selector,

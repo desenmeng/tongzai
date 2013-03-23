@@ -20,22 +20,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="template.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="template.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/template.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0">
+            <state line="10" column="27" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.2084063">
               <folding>
-                <marker date="1364015589923" expanded="true" signature="368:385" placeholder="..." />
+                <marker date="1364017451199" expanded="true" signature="368:385" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myStyle.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="myStyle.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/myStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="1" selection-start="392" selection-end="392" vertical-scroll-proportion="0.34931508">
+            <state line="26" column="13" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.windstagball.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lib/jquery.windstagball.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,8 +84,9 @@
       <list>
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/css/stylechat.css" />
-        <option value="$PROJECT_DIR$/js/template.js" />
+        <option value="$PROJECT_DIR$/js/lib/jquery.windstagball.js" />
         <option value="$PROJECT_DIR$/css/myStyle.css" />
+        <option value="$PROJECT_DIR$/js/template.js" />
       </list>
     </option>
   </component>
@@ -194,7 +206,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1384" height="786" extended-state="7" />
+    <frame x="-9" y="-9" width="1384" height="786" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -279,15 +291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/template.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="2640" selection-end="2640" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1364015589923" expanded="true" signature="368:385" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/stylechat.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="0" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
@@ -295,10 +298,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/lib/jquery.windstagball.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="24" selection-start="467" selection-end="467" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/myStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="1" selection-start="392" selection-end="392" vertical-scroll-proportion="0.34931508">
+        <state line="26" column="13" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/template.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="27" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.2084063">
+          <folding>
+            <marker date="1364017451199" expanded="true" signature="368:385" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

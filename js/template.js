@@ -10,14 +10,14 @@ function hot(data){
     //console.log(hot_topics);
     for(var i = 1 ; i <= 28 ; i ++){
         var hot_topic = $('<a>');
-        hot_topic.attr("href", hot_topics[i].url);
+        hot_topic.attr("href", hot_topics[i].url.replace("m.","www."));
         hot_topic.attr("target", "_blank");
         hot_topic.html(hot_topics[i].word);
         hot_topic.appendTo($tagCloud);
 
     }
     $('#hot_topics_cloud').windstagball({
-        radius:160,
+        radius:150,
         speed:3
     });
 }

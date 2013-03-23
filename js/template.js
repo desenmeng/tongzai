@@ -10,7 +10,7 @@ function hot(data){
     //console.log(hot_topics);
     for(var i = 1 ; i <= 28 ; i ++){
         var hot_topic = $('<a>');
-        hot_topic.attr("href", hot_topics[i].url.replace("m.","www."));
+        hot_topic.attr("href", hot_topics[i].url.replace("m.","www.").replace("word","wd"));
         hot_topic.attr("target", "_blank");
         hot_topic.html(hot_topics[i].word);
         hot_topic.appendTo($tagCloud);
@@ -39,7 +39,7 @@ $(window).resize(function(){
     $(".slimScrollDiv").css("height",height);
     $("#husky_chat_url_conversation_stream").css("height",height);
 });
-
+//获取热词
 $('a#ui-id-2').click(function(){
     $.ajax({
         type: "get",
@@ -67,34 +67,50 @@ function getTime(time){
     var sec = time.getSeconds();
     return hour+":"+min+":"+sec;
 }
+function sendMessage(){
+    if($("#husky_chat_send_message_module_wrap_textarea").val().trim()!=""){
+        var data = {
+            name:"jiaHan Wang",
+            time:getTime(new Date()),
+            content:$("#husky_chat_send_message_module_wrap_textarea").val()
+        };
+        pushData(data);
+        $("#husky_chat_send_message_module_wrap_textarea").val("");
+    }
+    else{
+        alert("写点东西吧 亲");
+        $("#husky_chat_send_message_module_wrap_textarea").val("");
+    }
+}
 $("#husky_chat_send_message_module_sendbutton").click(function(){
-    var data = {
-        name:"jiahan Wang",
-        time:getTime(new Date()),
-        content:$("#husky_chat_send_message_module_wrap_textarea").val()
-    };
-	pushData(data);
+    sendMessage();
+});
+
+function addMessageYou(data){
     var messageYouDom = baidu.template(messageYou,data);
     $("#husky_chat_url_conversation_stream").append(messageYouDom);
     $("#husky_chat_send_message_module_wrap_textarea").val("");
     //scroll To Last
     var toScrollHeight = $('#husky_chat_url_conversation_stream').scrollTop() + $(".husky_chat_sidebar_message:last").height();
     $("#husky_chat_url_conversation_stream").scrollTop(toScrollHeight);
-    console.log($('#husky_chat_url_conversation_stream').height());
-    console.log($('.slimScrollBar').height());
-    $(".slimScrollBar").css("top",$('#husky_chat_url_conversation_stream').height()-$('.slimScrollBar').height()+10);
-});
+    //console.log($('#husky_chat_url_conversation_stream').height());
+    //console.log($('.slimScrollBar').height());
+    $(".slimScrollBar").css("top",$('#husky_chat_url_conversation_stream').height()-$('.slimScrollBar').height()+20);
+
+}
+
 function addMessageElse(data){
     var messageElseDom = baidu.template(messageElse,data);
     $("#husky_chat_url_conversation_stream").append(messageElseDom);
     //scroll To Last
     var toScrollHeight = $('#husky_chat_url_conversation_stream').scrollTop() + $(".husky_chat_sidebar_message:last").height();
     $('#husky_chat_url_conversation_stream').scrollTop(toScrollHeight);
-    $(".slimScrollBar").css("top",$('#husky_chat_url_conversation_stream').height()-$('.slimScrollBar').height()+10);
+    //console.log($('#husky_chat_url_conversation_stream').height());
+    //console.log($('.slimScrollBar').height());
+    $(".slimScrollBar").css("top",$('#husky_chat_url_conversation_stream').height()-$('.slimScrollBar').height()+20);
 }
 //push data to firebase
 function pushData(data){
-	//var myDataRef = new Firebase('https://hi.firebaseio.com/mdemo');
     mdemo.push(data);
 };
 //watch the add event
@@ -102,5 +118,12 @@ mdemoLimit.on('child_added', function(snapshot) {
 		var message = snapshot.val();
 		addMessageElse(message);
 	});
+$("#queryWord").text($.query.get('wd'));
+$("#husky_chat_send_message_module_wrap_textarea").keydown(function(event){
+    if(event.which == 13){
+        event.preventDefault();
+        sendMessage();
+    }
+});
 
 

@@ -52,12 +52,15 @@ if($q){
 	});
 }
 var hi = new Firebase('https://hi.firebaseio.com');
-var mdemo = new Firebase('https://hi.firebaseio.com/mdemo');
+var domain="https://hi.firebaseio.com/";
+if($q){
+	domain=domain+encodeURIComponent($q);
+}else{
+	domain=domain+"mdemo";
+}
+var mdemo = new Firebase(domain);
 var mdemoLimit = mdemo.limit(1);
-//mdemo.push($.query.get('wd'));
-//mdemo.on("child_added",function(snapshot){
-//    console.log(snapshot.val());
-//});
+
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
         switch(request.action) {

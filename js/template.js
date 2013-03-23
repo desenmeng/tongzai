@@ -86,9 +86,6 @@ function addMessageElse(data){
 function pushData(data){
 	//var myDataRef = new Firebase('https://hi.firebaseio.com/mdemo');
     mdemo.push(data);
-		
-	var word=$.query.get('wd');
-	console.log(word);
 };
 //watch the add event
 mdemoLimit.on('child_added', function(snapshot) {

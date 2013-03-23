@@ -13,7 +13,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["http://*/*"],
+            "matches": ["http://www.baidu.com/s*"],
             "css":["css/stylechat.css","css/jquery-ui-1.10.2.custom.css","css/myStyle.css"],
             "js": [
                 "js/lib/jquery-1.9.1.min.js","js/lib/jquery.query.js",
@@ -28,6 +28,6 @@
     "content_security_policy": "script-src 'self' https://*.firebaseio.com https://*.firebase.com; object-src 'self'",
     "permissions": [
         "notifications", "http://*/*", "https://*/*","http://www.baidu.com/s?*"],
-    "web_accessible_resources": ["images/send-button.png","images/header-logo.png"]
+    "web_accessible_resources": ["images/send-button.png","images/header-logo.png","images/header-bg.png","images/header-button.png","images/footer-bg.png"]
 
 }

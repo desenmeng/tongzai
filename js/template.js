@@ -56,17 +56,11 @@ $("#husky_chat_send_message_module_sendbutton").click(function(){
         time:getTime(new Date()),
         content:$("#husky_chat_send_message_module_wrap_textarea").val()
     };
-    console.log(messageYou);
     var messageYouDom = baidu.template(messageYou,data);
     $("#husky_chat_url_conversation_stream").append(messageYouDom);
     $("#husky_chat_send_message_module_wrap_textarea").val("");
 });
-function addMessageElse(message){
-    var data = {
-        name:message.name,
-        time:getTime(message.date),
-        content:message.contet
-    }
+function addMessageElse(data){
     var messageElseDom = baidu.template(messageElse,data);
     $("#husky_chat_url_conversation_stream").append(messageElseDom);
 }

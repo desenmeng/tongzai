@@ -14,8 +14,13 @@
     "content_scripts": [
         {
             "matches": ["http://www.baidu.com/s*","http://www.baidu.com/baidu*"],
-			"exclude_globs":["http://www.baidu.com/search*"],
-            "css":["css/stylechat.css","css/jquery-ui-1.10.2.custom.css","css/myStyle.css"],
+            "exclude_globs":["http://www.baidu.com/search*"],
+            "css":[
+                "css/stylechat.css",
+                "css/jquery-ui-1.10.2.custom.css",
+                "css/bootstrap.min.css",
+                "css/myStyle.css"
+            ],
             "js": [
                 "js/lib/jquery-1.9.1.min.js","js/lib/jquery.query.js",
                 "js/lib/jquery-ui-1.10.2.min.js",

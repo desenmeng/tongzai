@@ -32,8 +32,8 @@ function remind(){
 	  f=1;
       step++;
       if (step==3) {step=1;}
-      if (step==1) {document.title='【有人与你同在】';}
-      if (step==2) {document.title='【　　　　　　】';}
+      if (step==1) {document.title='【有新消息】';}
+      if (step==2) {document.title='【　　　　】';}
       to=setTimeout("remind()",500);
 	  setTimeout("clearRemind()",2000);
 }
@@ -53,9 +53,6 @@ if($q){
 	$hiqu=$hiq.child('user');
 	$hiqu.on("value",function(dataSnapshot){
 		var u=dataSnapshot.val();
-		if($hiquc<2&&u>1&&!f){
-			remind();
-		}
 		$hiquc=u;
 		if($hiquc){
 			refreshUser();

@@ -18,8 +18,8 @@ mdemo.on("child_added",function(snapshot){
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
         switch(request.action) {
-            case 'addUser':
-                console.log(request.value);
+            case 'toggle':
+                $("#husky_chat_bar").toggle("normal");
                 break;
         }
     });

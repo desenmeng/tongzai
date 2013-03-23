@@ -3,3 +3,4 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         action: 'toggle'
     });
 });
+

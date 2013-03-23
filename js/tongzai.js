@@ -24,6 +24,24 @@ function refreshUser(){
 	}
 	
 }
+
+step=1;
+var to;
+var title=document.title,f=0;
+function remind(){
+	  f=1;
+      step++;
+      if (step==3) {step=1;}
+      if (step==1) {document.title='【有人与你同在】';}
+      if (step==2) {document.title='【　　　　　　】';}
+      to=setTimeout("remind()",500);
+	  setTimeout("clearRemind()",2000);
+}
+function clearRemind(){
+	if(to)
+	clearTimeout(to);
+	document.title=title;
+}
 var tongzai = Class.extend({
     init:function(){
     }
@@ -34,12 +52,15 @@ if($q){
 	$hiq=$hi.child($q);
 	$hiqu=$hiq.child('user');
 	$hiqu.on("value",function(dataSnapshot){
-		$hiquc=dataSnapshot.val();
+		var u=dataSnapshot.val();
+		if($hiquc<2&&u>1&&!f){
+			remind();
+		}
+		$hiquc=u;
 		if($hiquc){
 			refreshUser();
 			$hiqu.onDisconnect().set($hiquc-1);
 		}
-		console.log('currentUserCount:'+$hiquc);
 	});
 	$hiqu.transaction(function(curUserCount){
 		if(curUserCount == null){
@@ -69,7 +90,6 @@ chrome.extension.onMessage.addListener(
                 break;
         }
     });
-
 
 
 

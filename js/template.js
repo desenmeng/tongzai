@@ -56,6 +56,7 @@ $("#husky_chat_send_message_module_sendbutton").click(function(){
         time:getTime(new Date()),
         content:$("#husky_chat_send_message_module_wrap_textarea").val()
     };
+	pushData(data);
     var messageYouDom = baidu.template(messageYou,data);
     $("#husky_chat_url_conversation_stream").append(messageYouDom);
     $("#husky_chat_send_message_module_wrap_textarea").val("");
@@ -64,5 +65,18 @@ function addMessageElse(data){
     var messageElseDom = baidu.template(messageElse,data);
     $("#husky_chat_url_conversation_stream").append(messageElseDom);
 }
+//push data to firebase
+function pushData(data){
+	//var myDataRef = new Firebase('https://hi.firebaseio.com/mdemo');
+    mdemo.push(data);
+		
+	var word=$.query.get('wd');
+	console.log(word);
+};
+//watch the add event
+mdemoLimit.on('child_added', function(snapshot) {
+		var message = snapshot.val();
+		addMessageElse(message);
+	});
 
 

@@ -1,4 +1,4 @@
-var tongzaiDom = $('<div id="husky_chat_bar"><div id="husky_chat_sidebar"><!--Header--><div id="husky_chat_sidebar_header"><div id="husky_chat_sidebar_logo"></div><ul id="husky_chat_sidebar_header_links"><li id="husky_chat_room_online_users"><a id="husky_chat_sidebar_online_pop_up_toggle" href="#">1 Online</a></li></ul></div><!--Tabs--><div id="tabs"><ul><li style="margin-right:6px;"><a href="#tabs-1">聊天</a></li><li><a href="#tabs-2">热点</a></li></ul><!--聊天--><div id="tabs-1"><div id="husky_chat_sidebar_chatswitch"><div id="husky_chat_sidebar_chatswitch_text">大家在谈论&nbsp;<a id="queryWord" href="#"></a></div></div><div id="husky_chat_sidebar_conversation_window"><ul id="husky_chat_url_conversation_stream"></ul></div><div id="husky_chat_send_message_module" class="send_message_module"><div id="husky_chat_send_message_module_wrap"><textarea id="husky_chat_send_message_module_wrap_textarea" name="message_box"></textarea><a id="husky_chat_send_message_module_sendbutton"></a></div></div></div><!--热词--><div id="tabs-2"><div id="hot_topics_cloud_wrapper"><div id="hot_topics_cloud"></div></div></div></div></div></div>');
+var tongzaiDom = $('<div id="husky_chat_bar"><div id="husky_chat_sidebar"><!--Header--><div id="husky_chat_sidebar_header"><div id="husky_chat_sidebar_logo"></div><ul id="husky_chat_sidebar_header_links"><li id="husky_chat_room_online_users"><a id="husky_chat_sidebar_online_pop_up_toggle" href="#">1 Online</a></li></ul></div><!--Tabs--><div id="tabs"><ul><li style="margin-right:6px;"><a href="#tabs-1">聊天</a></li><li><a href="#tabs-2">热点</a></li></ul><!--聊天--><div id="tabs-1"><div id="husky_chat_sidebar_chatswitch"><div id="husky_chat_sidebar_chatswitch_text">大家在谈论&nbsp;<a id="queryWord" href="#"></a></div></div><div id="husky_chat_sidebar_conversation_window"><ul id="husky_chat_url_conversation_stream"></ul></div><div id="husky_chat_send_message_module" class="send_message_module"><div id="husky_chat_send_message_module_wrap"><textarea id="husky_chat_send_message_module_wrap_textarea" name="message_box"></textarea><a id="husky_chat_send_message_module_sendbutton"></a></div></div><div id="user_confirm"><input id="user-confirm-input" type="text" placeholder="请输入昵称"/><button id="user-confirm-button" class="btn btn-primary btn-block" type="button">加&nbsp;入&nbsp;讨&nbsp;论</button></div></div><!--热词--><div id="tabs-2"><div id="hot_topics_cloud_wrapper"><div id="hot_topics_cloud"></div></div></div></div></div></div>');
 var messageYou = '<li class="husky_chat_sidebar_message"><div class="husky_chat_sidebar_message_you"><div class="husky_chat_sidebar_message_info"><strong class="husky_chat_sidebar_message_sender"><a href="#" id="husky_chat_sidebar_event_name_username" class="husky_chat_sidebar"><%=name%></a></strong><abbr class="husky_chat_sidebar_message_timestamp"><%=time%></abbr></div><div class="husky_chat_sidebar_message_body"><p class="husky_chat_sidebar_message_body_p"><%=content%></p></div></div></li>';
 var messageElse = '<li class="husky_chat_sidebar_message"><div class="husky_chat_sidebar_message_else"><div class="husky_chat_sidebar_message_info"><strong class="husky_chat_sidebar_message_sender"><a href="#" id="husky_chat_sidebar_event_name_username" class="husky_chat_sidebar"><%=name%></a></strong><abbr class="husky_chat_sidebar_message_timestamp"><%=time%></abbr></div><div class="husky_chat_sidebar_message_body"><p class="husky_chat_sidebar_message_body_p"><%=content%></p></div></div></li>';
 $("body").append(tongzaiDom);
@@ -14,12 +14,12 @@ function hot(data){
         hot_topic.attr("target", "_blank");
         hot_topic.html(hot_topics[i].word);
         hot_topic.appendTo($tagCloud);
-
     }
     $('#hot_topics_cloud').windstagball({
         radius:150,
         speed:3
     });
+    $tagCloud.fadeIn(200);
 }
 
 //注册tabs
@@ -41,6 +41,7 @@ $(window).resize(function(){
 });
 //获取热词
 $('a#ui-id-2').click(function(){
+    $('#hot_topics_cloud').hide();
     $.ajax({
         type: "get",
         async: false,
@@ -53,6 +54,18 @@ $('a#ui-id-2').click(function(){
             //alert(jqXHR);
         }
     });
+});
+//用户输入姓名
+$("#user-confirm-button").click(function(){
+    if($("#user-confirm-input").val() != ""){
+        $("#user_confirm").animate({
+                "bottom": "-130px"},
+            500,
+            function(){
+                $(this).hide();
+                $("#husky_chat_send_message_module_wrap").fadeIn();
+            });
+    }
 });
 
 function getTime(time){

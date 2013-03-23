@@ -581,9 +581,8 @@ a.husky_chat_sidebar_message_body_p{
 
 /*Sending messages to main chat*/
 	#husky_chat_send_message_module {
-		height: 65px;
+		height: 80px;
 		width: 320px;
-		background: url('chrome-extension://__MSG_@@extension_id__/images/footer-bg.png') repeat;
 }
 
 	#husky_chat_send_message_module_wrap {

@@ -13,6 +13,10 @@
 #husky_chat_sidebar_chatswitch_text a:hover{
     color: #F7062D;
 }
+
+#husky_chat_url_conversation_stream{
+    padding-top: 15px;
+}
 #hot_topics_cloud_wrapper{
     width: 320px;
     overflow: hidden;
@@ -24,7 +28,7 @@
     margin-top: 30%;
     width: 550px;
     height: 350px;
-    left: -100px;
+    left: -150px;
 }
 #hot_topics_cloud a {
     position:absolute;
@@ -36,7 +40,37 @@
 }
 #hot_topics_cloud a:hover {
     color: #F7062D;
-    font-weight: 1000;
+}
 
+#husky_chat_send_message_module{
+
+    background: #F8F8F8;
+}
+#husky_chat_send_message_module_wrap{
+    display: none;
+    backgroundr: #F8F8F8;
+}
+
+#user_confirm{
+    width: 100%;
+    height: 130px;
+    background: #F8F8F8;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+#user-confirm-button{
+    font-family: "微软雅黑";
+    width: 280px;
+    height: 35px;
+    margin-left: 20px;
+}
+
+#user-confirm-input{
+    font-family: "微软雅黑";
+    width: 280px;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 

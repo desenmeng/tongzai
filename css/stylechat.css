@@ -17,7 +17,7 @@
 }
 
 p.husky_chat_sidebar_message_body_p{
-	font-family: 'Helvetica Neue', Arial, sans-serif; 
+	font-family: '微软雅黑','宋体','Helvetica Neue', Arial, sans-serif;
 	font-size: 13px; 
 	line-height: 1.5em; 
 	color: #333; 
@@ -509,7 +509,7 @@ a.husky_chat_sidebar_message_body_p{
 							color: #000;
 							}
 					a#husky_chat_sidebar_event_name_username {
-						font-family: 'Helvetica Neue', Arial, sans-serif;
+						font-family: '微软雅黑','宋体','Helvetica Neue', Arial, sans-serif;
 						text-decoration: none;
 						text-align: right;
 						font-size: 13px;
@@ -609,7 +609,7 @@ a.husky_chat_sidebar_message_body_p{
 		height: 50px;
 		width: 75%;
 		padding: 3px 4px;
-		font-family: 'Helvetica Neue', Arial, sans-serif;
+		font-family: '微软雅黑','宋体','Helvetica Neue', Arial, sans-serif;
 		font-style: normal;
 		font-size: 15px;
 		color: #333;

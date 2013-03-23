@@ -67,24 +67,30 @@ function getTime(time){
     var sec = time.getSeconds();
     return hour+":"+min+":"+sec;
 }
-$("#husky_chat_send_message_module_sendbutton").click(function(){
+function sendMessage(){
     var data = {
         name:"jiaHan Wang",
         time:getTime(new Date()),
         content:$("#husky_chat_send_message_module_wrap_textarea").val()
     };
-	pushData(data);
+    pushData(data);
+    $("#husky_chat_send_message_module_wrap_textarea").val("");
+}
+$("#husky_chat_send_message_module_sendbutton").click(function(){
+    sendMessage();
+});
+
+function addMessageYou(data){
     var messageYouDom = baidu.template(messageYou,data);
     $("#husky_chat_url_conversation_stream").append(messageYouDom);
     $("#husky_chat_send_message_module_wrap_textarea").val("");
-});
+}
 function addMessageElse(data){
     var messageElseDom = baidu.template(messageElse,data);
     $("#husky_chat_url_conversation_stream").append(messageElseDom);
 }
 //push data to firebase
 function pushData(data){
-	//var myDataRef = new Firebase('https://hi.firebaseio.com/mdemo');
     mdemo.push(data);
 };
 //watch the add event
@@ -92,5 +98,12 @@ mdemoLimit.on('child_added', function(snapshot) {
 		var message = snapshot.val();
 		addMessageElse(message);
 	});
+$("#queryWord").text($.query.get('wd'));
+$("#husky_chat_send_message_module_wrap_textarea").keydown(function(event){
+    if(event.which == 13){
+        event.preventDefault();
+        sendMessage();
+    }
+});
 
 

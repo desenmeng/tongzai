@@ -59,7 +59,7 @@ if($q){
 	domain=domain+"mdemo"+"/msgs";
 }
 var mdemo = new Firebase(domain);
-var mdemoLimit = mdemo.limit(1);
+var mdemoLimit = mdemo.limit(5);
 
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {

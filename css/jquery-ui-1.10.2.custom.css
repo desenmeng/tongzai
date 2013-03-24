@@ -825,12 +825,12 @@ body .ui-tooltip {
 .ui-widget-header .ui-state-default {
 	background: #FFFFFF url(images/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #0073ea;
+	color: rgb(32, 177, 197);
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #0073ea;
+	color: rgb(32, 177, 197);
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -839,7 +839,7 @@ body .ui-tooltip {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	background: #0073ea url(images/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x;
+	background: #56bbe7 url(images/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
 	color: #ffffff;
 }
@@ -860,7 +860,7 @@ body .ui-tooltip {
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #f7062d;
+	color: #ee5f5b;
 	text-decoration: none;
 }
 

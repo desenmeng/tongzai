@@ -65,7 +65,7 @@ a.husky_chat_sidebar_message_body_p{
 			width: 120px; 
 			height: 0; 
 			overflow: hidden; 
-			margin: 8px 16px 14px 16px; 
+			margin: 10px 16px 14px 14px; 
 			padding-top: 28px; 
 			background: url('chrome-extension://__MSG_@@extension_id__/images/header-logo.png') no-repeat;
         }
